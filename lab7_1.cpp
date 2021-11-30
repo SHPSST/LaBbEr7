@@ -2,7 +2,7 @@
 #include<string>
 
 using namespace std;
-
+string z,v;
 string func1(string x){
 	int i = 0, L = x.size();
 	string y = "";
@@ -15,27 +15,56 @@ string func1(string x){
 
 string func2(string x){
 	int i = 0, L = x.size();
-	string y = "";
+	string z = "";
 	while(i < L){
-		y += toupper(x[i]);
+		z += toupper(x[i]);
 		i++;
 	}
-	return y;	
+	return z;	
 }
 
 string func3(string x){
 	int i = 0, L = x.size();
-	string y = "";
+	string v = "",M;
 	while(i < L){
-		y += tolower(x[i]);
+		v += tolower(x[i]);
 		i++;
 	}
-	return y;	
+	return v;
 }
 
+string newfunc(string x){
+	int i=0,L = x.size();
+	while(i<L)
+		{
+			if(x[i]==x[L-i-1])
+				{
+					i++;
+				}
+			else if(x[i]==z[L-i-1])
+				{
+					i++;
+				}
+			else if(x[i]==v[L-i-1])
+				{
+					i++;
+				}
+			else
+				{
+					cout << "No";
+					return 0;
+				}		
+		} 
+	cout << "Yes";
+	return 0;
+}
+
+
 int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
+	string M;
+    cout << "Input text: "	;
+	cin >> M;
+    cout << "Reversed text: "<<	func1(M)<<"\n";
+    cout << "Palindrome: "<<newfunc(M)	;
     return 0;
 }
